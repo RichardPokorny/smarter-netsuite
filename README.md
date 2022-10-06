@@ -3,8 +3,9 @@ A collection of useful SuiteScripts and tools for NetSuite ERP.
 
 ## Useful snippets for Browser Console
 ### Update subsidiary of a project
+This snippet is useful when a project has assigned a correct customer, but incorrect subsididary of that customer. Just replace XXX with internal ID for the right subsidiary and run the code in Console.
 ```
-const newSubsidiary = "14";
+const newSubsidiary = XXX; //Replace with internal ID of new subsidiary of the project
 const customer = nlapiGetFieldValue('parent');
 const oldSubsidiary = nlapiGetFieldValue('subsidiary');
 
