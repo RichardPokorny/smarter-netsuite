@@ -13,7 +13,7 @@ require(['N/currentRecord', 'N/record'], function(currentRecord, record) {
     const recordToUpdate = currentRecord.get()
     const externalIdValue = recordToUpdate.getValue({fieldId: SOURCE_FIELD})
     
-    console.warn('Record Internal ID: ' + recordToUpdate.id + ' | Record Type: ' + recordToUpdate.type + ' | 'External ID value to be set: ' + externalIdValue)
+    console.warn('Record Internal ID: ' + recordToUpdate.id + ' | Record Type: ' + recordToUpdate.type + ' | External ID value to be set: ' + externalIdValue)
     
     record.submitFields({type: recordToUpdate.type, id: recordToUpdate.id, values: {'externalid': externalIdValue}})
     
