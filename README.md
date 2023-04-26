@@ -4,9 +4,10 @@ A collection of useful SuiteScripts and tools for NetSuite ERP.
 ## Useful snippets for Browser Console
 
 ### Update external ID of a record based on another field on the record
+This snippet sets external ID based on another field that is specifed in SOURCE_FIELD variable. This code has to be run on the record whose external ID is to be updated.
 
 ```
-let SOURCE_FIELD = 'name'
+const SOURCE_FIELD = 'name' // Replace with script ID of a field that has value that will be set as external ID
 
 require(['N/currentRecord', 'N/record'], function(currentRecord, record) {
     const recordToUpdate = currentRecord.get()
