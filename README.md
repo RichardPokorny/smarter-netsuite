@@ -2,6 +2,23 @@
 A collection of useful SuiteScripts and tools for NetSuite ERP.
 
 ## Useful snippets for Browser Console
+
+### Update external ID of a record based on another field on the record
+
+```
+let SOURCE_FIELD = 'name'
+
+require(['N/currentRecord', 'N/record'], function(currentRecord, record) {
+    const recordToUpdate = currentRecord.get()
+    const externalIdValue = recordToUpdate.getValue({fieldId: SOURCE_FIELD})
+    
+    console.log(recordToUpdate.id, recordToUpdate.type, externalIdValue)
+    
+    record.submitFields({type: recordToUpdate.type, id: recordToUpdate.id, values: {'externalid': externalIdValue}})
+    
+})
+```
+
 ### Update subsidiary of a project
 This snippet is useful when a project has assigned a correct customer, but incorrect subsididary of that customer. Just replace XXX with internal ID for the right subsidiary and run the code in Console.
 ```
